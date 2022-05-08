@@ -1,0 +1,10 @@
+<h4>Username: {{ bodyObject.username }}</h4>
+<h4>Token: {{ bodyObject.accessToken }}</h4>
+<h4>role1: {{ bodyObject.roles[0] }}</h4>
+<h4>role2: {{ bodyObject.roles[1] }}</h4>
+<h4>Email: {{ bodyObject.email }}</h4>
+<h4>TokenType: {{ bodyObject.tokenType }}</h4>
+
+
+<label for="">Lista de empleados</label>
+<a [routerLink]="['/lista-empleados']">CLICK</a>

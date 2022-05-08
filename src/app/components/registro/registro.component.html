@@ -1,0 +1,38 @@
+<app-menu></app-menu>
+
+<div *ngIf="mensajeKawai || mensajeBaka" class="mensajes_server">
+<h1>{{ mensajeKawai }}</h1>
+<h1>{{ mensajeBaka }}</h1>
+</div>
+
+<form (ngSubmit)="onSubmit1()" style="border:1px solid #ccc">
+    
+    <div class="container">
+      <h1>Registro</h1>
+      <hr>
+  
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="username" name="username" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="email" name="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" required>
+  
+      <label for="role"><b>Role</b></label>
+      <input type="password" placeholder="Repeat Password" [(ngModel)]="role" name="role" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+      
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+  
+      <div class="clearfix">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+  <div class="toLogin">  <button type="submit" (click)="login()" >LOGIN</button>  </div>
