@@ -22,6 +22,8 @@ export class ServiceService {
   url= `http://localhost:8080/api/auth/signup`;
   url1= `http://localhost:8080/api/auth/signin`;
   url2= `http://localhost:8080/admin/lista-empleados`;
+  url3= `http://localhost:8080/admin/vacaciones?id=2`;
+  url4= `http://localhost:8080/vacaciones/lista-vacaciones`;
   //url3= `http://localhost:8080/api/auth/buscador?t=${this.termino}`;
   
 
@@ -39,6 +41,23 @@ export class ServiceService {
         role: ['user','admin'] 
     }
     return this.http.post(this.url, data);
+  }
+
+  vacaciones(){
+
+    let data = {
+      //id: 1,
+      fecha_ini: "2021-11-12",
+      fecha_fin: "2021-11-12",
+      numero_dias: 1,
+      motivo_cambio: 1,
+      estado_Adm: "A",
+      estado_Resp: "A",
+      estado: "A"
+      //user: 1   
+    }
+    //return this.http.post(this.url3, data);
+    return this.http.post(this.url3, data);
   }
 
   login(user:String, pass:String): Observable<Token>{
@@ -60,6 +79,10 @@ export class ServiceService {
     console.log("this.headers =======> "+this.headers);
     this.updateHeader();
     return this.http.get(this.url2, {headers: this.headers});
+  }
+
+  listaVacaciones(){
+    return this.http.get(this.url4);
   }
 
   getNumbers(): Observable<number> {

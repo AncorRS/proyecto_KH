@@ -1,11 +1,12 @@
 <app-menu></app-menu>
 
 <div class="titulo">
-  <h2>Login Form</h2>
+  <h2>Login Form: user: 11111 | clave: 11111111</h2>
 </div>  
 <div class="errores">
-  <h2>{{ mensajeKawai }}</h2>
-  <h2>{{ mensajeBaka }}</h2>
+  <!-- <h2>{{ mensajeKawai }}</h2>
+  <h2>{{ mensajeBaka }}</h2> -->
+  <p-messages class="mensages_error_primeNg" [(value)]="msgs2" [enableService]="false"></p-messages>
 </div>
 
 <form (ngSubmit)="login()">
@@ -30,9 +31,9 @@
 </form>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -52,3 +53,28 @@
     </div>
   </div>
 </div>
+
+<!-- <button (click)="openDialog1()">MAT BUTTON</button> -->
+
+<!-- BOTON MOSTRAR MENSAJES DE ERROR DE PRIMENG -->
+<!-- <button (click)="addMessages()">MENSAJES PRIMENG</button> -->
+
+<!-- MENSAJES DE ERROR DE PRIMENG -->
+<!-- <p-messages [(value)]="msgs2" [enableService]="false"></p-messages> -->
+
+<!-- BOTONES DE PRIMENG -->
+<!-- <h5>Dynamic</h5>
+<button type="button" pButton pRipple (click)="addMessages()" label="Show" class="p-mr-2"></button>
+<button type="button" pButton pRipple icon="pi pi-times" label="Clear" class="p-button-secondary"></button> -->
+
+<!-- BOTONES DE PRIMENG -->
+<!-- <h5>Message Service</h5>
+<button type="button" pButton (click)="showViaService()" label="Via Service"></button>
+<p-messages></p-messages> -->
+
+<!-- <h5>Inline Message</h5>
+<p>p-message component is used to display inline messages mostly within forms.</p>
+<p-message severity="info" text="Message Content" styleClass="p-mr-2"></p-message>
+<p-message severity="success" text="Message Content" styleClass="p-mr-2"></p-message>  
+<p-message severity="warn" text="Message Content" styleClass="p-mr-2"></p-message>  
+<p-message severity="error" text="Message Content"></p-message> -->

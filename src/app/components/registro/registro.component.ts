@@ -70,6 +70,12 @@ export class RegistroComponent implements OnInit {
   login(){
     this.router.navigate(['login']);
   }
+
+  vacaciones(){
+    this.servicio.vacaciones().subscribe(data =>{
+      console.log(data);
+    })
+  }
 }
 
 

@@ -16,6 +16,15 @@ import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empl
 import { MenuComponent } from './components/menu/menu.component';
 import { ModalLoginComponent } from './modales/modal-login/modal-login.component';
 import { ModalRegistroComponent } from './modales/modal-registro/modal-registro.component'; //AÑADIMOS HTTPCLIENTMODULE
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {ButtonModule} from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
+import {RippleModule} from 'primeng/ripple';
+import { ListaVacacionesComponent } from './components/lista-vacaciones/lista-vacaciones.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +37,23 @@ import { ModalRegistroComponent } from './modales/modal-registro/modal-registro.
     ListaEmpleadosComponent,
     MenuComponent,
     ModalLoginComponent,
-    ModalRegistroComponent
+    ModalRegistroComponent,
+    ListaVacacionesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule //AÑADIMOS HTTPCLIENTMODULE
+    HttpClientModule, //AÑADIMOS HTTPCLIENTMODULE
+    MatButtonModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MessagesModule,
+    MessageModule,
+    ButtonModule,
+    InputTextModule,
+    RippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
-<h4>Username: {{ bodyObject.username }}</h4>
+<app-menu></app-menu>
+
+<h1>Username: {{ bodyObject.username }}</h1>
 <h4>Token: {{ bodyObject.accessToken }}</h4>
 <h4>role1: {{ bodyObject.roles[0] }}</h4>
 <h4>role2: {{ bodyObject.roles[1] }}</h4>
@@ -7,4 +9,7 @@
 
 
 <label for="">LISTA EMPLEADOS</label>
-<a [routerLink]="['/lista-empleados']">CLICK</a>
+<a [routerLink]="['/lista-empleados']">CLICK</a><br><br>
+
+<label for="">LISTA VACACIONES</label>
+<a [routerLink]="['/lista-vacaciones']">CLICK</a>

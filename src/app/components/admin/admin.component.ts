@@ -16,6 +16,9 @@ export class AdminComponent implements OnInit {
   id1: any;
   id2: any;
   tokenStringFromLocalStorage: any;
+  usuario: any;
+  token_completo_Json: Token;
+  tokenCompletoString: any;
   
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -24,8 +27,15 @@ export class AdminComponent implements OnInit {
     { }
     
     ngOnInit(): void {
-      this.tokenStringFromLocalStorage = localStorage.getItem('token');
+      this.usuario = localStorage.getItem('usuario');
+      this.tokenStringFromLocalStorage = localStorage.getItem('token'); //RECUPERAMOS TOKEN
+      this.tokenCompletoString = localStorage.getItem('token_completo');
+      this.token_completo_Json = JSON.parse(this.tokenCompletoString); //TOKEN COMPLETO CON TOOOOODA LA MANDANGUITA
       console.log("TOKEN_LOCALSTORAGE: "+this.tokenStringFromLocalStorage);
+
+      console.log("token_completo_Json==================================>")
+      console.log(this.token_completo_Json);
+      console.log("=====================================================>")
 
       console.log("this.activatedRoute.snapshot.queryParams =================================>");
       console.log(this.activatedRoute.snapshot.queryParams);
