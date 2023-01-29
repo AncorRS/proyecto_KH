@@ -1,0 +1,73 @@
+<app-menu></app-menu>
+<H1>LISTA DE VACACIONES DEL EMPLEAD@ : {{ datosEmpleado.nombre_empleado }}</H1>
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">INICIO</th>
+        <th scope="col">FIN</th>
+        <th scope="col">DÍAS</th>
+        <th scope="col">MOTIVO</th>
+        <th scope="col">ESTADO</th>
+        <th scope="col">ADMIN</th>
+        <th scope="col">RESPONS.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of datosEmpleado.vacaciones">
+        <td>{{ item.id }}</td>
+        <td>{{ item.fecha_ini }}</td>
+        <td>{{ item.fecha_fin }}</td>
+        <td>{{ item.numero_dias }}</td>
+        <td>{{ item.motivo_cambio }}</td>
+        <td>
+            <button *ngIf="estado === 'S'">SOLICITADO</button>
+            <button *ngIf="estado === 'P'">PENDIENTE</button>
+            <button *ngIf="estado === 'A'">APROBADO</button>
+        </td>
+        <td>{{ item.estado_adm }}</td>
+        <td>{{ item.estado_resp }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- <div class="body">
+<form [formGroup]="formu" class="form" *ngFor="let item of datosEmpleado.vacaciones">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ item.fecha_ini }}" [(ngModel)]="datosEmpleado.vacaciones.fecha_ini" formControlName="nombre_empleado" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Apellido 1</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.vacaciones.fecha_fin }}" [(ngModel)]="datosEmpleado.vacaciones.fecha_fin" formControlName="apellido1" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Contacto</span>
+      <input type="email" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.vacaciones.numero_dias }}" [(ngModel)]="datosEmpleado.vacaciones.numero_dias" formControlName="contacto" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Contacto</span>
+      <input type="email" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.vacaciones.motivo_cambio }}" [(ngModel)]="datosEmpleado.vacaciones.motivo_cambio" formControlName="contacto" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Apellido 2</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.vacaciones.estado }}" [(ngModel)]="datosEmpleado.vacaciones.estado" formControlName="apellido2" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Calle</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.vacaciones.estado_adm }}" [(ngModel)]="datosEmpleado.vacaciones.estado_adm" formControlName="calle" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Categoría</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.vacaciones.estado_resp }}" [(ngModel)]="datosEmpleado.vacaciones.estado_resp" formControlName="categoria" aria-describedby="emailHelp">
+    </div>
+  </form>    
+</div> -->

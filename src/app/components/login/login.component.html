@@ -1,8 +1,16 @@
 <app-menu></app-menu>
 
-<div class="titulo">
+<!-- <div class="titulo">
   <h2>Login Form: user: 11111 | clave: 11111111</h2>
-</div>  
+</div>   -->
+
+<div class="titulo">
+  <h2>Login Form: ADMIN: FEFI | clave: 78478778</h2>
+</div>
+<div class="titulo">
+  <h2>Login Form: EMPLEADO: YANIRA | clave: 78489359</h2>
+</div>
+
 <div class="errores">
   <!-- <h2>{{ mensajeKawai }}</h2>
   <h2>{{ mensajeBaka }}</h2> -->
@@ -18,7 +26,7 @@
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="psw" required>
 
-    <button type="submit">Login</button>
+    <button *ngIf="a == 'a'"  type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>

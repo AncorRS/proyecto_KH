@@ -1,0 +1,19 @@
+<app-menu></app-menu>
+
+<div class="body">
+    <form [formGroup]="formu" class="form">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre</span>
+          <input type="date" class="form-control" id="exampleInputEmail1" 
+           formControlName="fecha_ini" aria-describedby="emailHelp" (change)="calcularDias()">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Apellido 1</span>
+          <input type="date" class="form-control" id="exampleInputEmail1" 
+           formControlName="fecha_fin" aria-describedby="emailHelp" (change)="calcularDias()">
+        </div>
+        <button type="submit" [disabled]="habilitar" (click)="enviaVacaciones()" class="btn btn-primary">Submit</button>
+        <em class="mensajeError" *ngIf="mostrarMensaje"><b>{{ mensajeErrorCalculoDias }}</b></em>
+      </form>    
+    </div>
+    <div>DIAS SOLICITADOS: <em class="restaDeDias">{{ restaDeDias }}</em></div>

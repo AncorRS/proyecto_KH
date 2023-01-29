@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Token } from 'src/app/models/token';
 import { ServiceService } from "../../services/service.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -9,52 +10,71 @@ import { ServiceService } from "../../services/service.service";
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  
+
+  token1: Token;
+  data: any;
+  data1: any;
   bodyObjectString: any; //NO ES STRING, ES DE TIPO "Params"
   bodyObject: Token;
   adios: any;
   id1: any;
   id2: any;
-  tokenStringFromLocalStorage: any;
   usuario: any;
   token_completo_Json: Token;
   tokenCompletoString: any;
+  role_user: string;
+  a: number = 1;
+  b: boolean = true;
   
   constructor(
     public activatedRoute: ActivatedRoute,
-    public servicio: ServiceService
-    ) 
-    { }
+    public servicio: ServiceService,
+    private router: Router
+    ) {}
     
-    ngOnInit(): void {
-      this.usuario = localStorage.getItem('usuario');
-      this.tokenStringFromLocalStorage = localStorage.getItem('token'); //RECUPERAMOS TOKEN
-      this.tokenCompletoString = localStorage.getItem('token_completo');
-      this.token_completo_Json = JSON.parse(this.tokenCompletoString); //TOKEN COMPLETO CON TOOOOODA LA MANDANGUITA
-      console.log("TOKEN_LOCALSTORAGE: "+this.tokenStringFromLocalStorage);
+  ngOnInit(): void {
+    console.log("=======================================ADMIN=============================================");
+    //TRAEMOS TODA LA MANDANGA DEL USUARIO DESDE EL SERVER MEDIANTE localStorage
+    this.tokenCompletoString = localStorage.getItem('token_completo');
+    this.token_completo_Json = JSON.parse(this.tokenCompletoString); //TOKEN COMPLETO CON TOOOOODA LA MANDANGUITA
 
-      console.log("token_completo_Json==================================>")
-      console.log(this.token_completo_Json);
-      console.log("=====================================================>")
+    //LO MISMO MEDIANTE SERVICIO
+    this.token1 = JSON.parse(this.servicio.token1);
 
-      console.log("this.activatedRoute.snapshot.queryParams =================================>");
-      console.log(this.activatedRoute.snapshot.queryParams);
-      console.log("==================================================================>");
-      /* this.bodyObject = this.activatedRoute.snapshot.queryParams;
-      this.bodyObject = JSON.parse(this.bodyObject.mensajeKawai); */
-      this.bodyObjectString = this.activatedRoute.snapshot.queryParams; //NO ES STRING, ES DE TIPO "Params"
-      this.bodyObject = JSON.parse(this.bodyObjectString.toAdmin);
+          //INTENTAMOS TRAER OBJETO DESDE LA URL
+    this.bodyObjectString = this.activatedRoute.snapshot.queryParams; //NO ES STRING, ES DE TIPO "Params"
 
-      console.log(this.bodyObject.username);
-      console.log(this.bodyObject.id);
-      console.log(this.bodyObject.roles);
-      //console.log(this.bodyObject['adios']);
+    //INTENTAMOS TRAER OBJETO DESDE LA URL
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.data = params.get('toAdmin');
+      this.data1 = this.data;
+    });
+    }
 
+    ////////////////////////////////////////////FUNCIONES////////////////////////////////////////////////// 
+
+  toFichaEmpleado(){
+    console.log("toListaEmpleados");
+    this.router.navigate(['/ficha-empleado', this.token1.id]);
   }
 
-  
+  toVacacionesEmpleado(){
+    console.log("toVacacionesEmpleado");
+    this.router.navigate(['/empleado/vacaciones-empleado', this.token1.id]);
   }
 
+  toSolicitudVacaciones(){
+    console.log("toSolicitudVacaciones()");
+    this.router.navigate(['/empleado/solicitud-vacaciones', this.token1.id]);
+  }
 
+  toUpdateEmpleado(){
+    console.log("toUpdateEmpleado");
+    this.router.navigate(['/empleado/update-empleado', this.token1.id]);
+  }
 
-
+  toTodasSolicitudes(){
+    console.log("toTodasSolicitudes");
+    this.router.navigate(['/admin/listado-solicitudes']);
+  }
+}

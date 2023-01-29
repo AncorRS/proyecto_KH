@@ -1,0 +1,28 @@
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: blue;
+    height: auto;
+    /* height: 100vh; */
+    flex-direction: column-reverse
+}
+
+.cont_botones{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: green;
+}
+
+.boton1{
+    border-style: solid;
+    border-color: blue;
+}
+
+.boton2{
+    border-style: solid;
+    border-color: blue;
+}

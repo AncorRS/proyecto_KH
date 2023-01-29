@@ -1,0 +1,17 @@
+.body {
+    width: 50%;
+}
+
+.form{
+    margin-left: 20%;
+}
+
+.mensajeError{
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+}
+
+.restaDeDias{
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+}   

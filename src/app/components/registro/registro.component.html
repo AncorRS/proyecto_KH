@@ -5,35 +5,132 @@
 <h1>{{ mensajeBaka }}</h1>
 </div>
 
-<form (ngSubmit)="onSubmit1()" style="border:1px solid #ccc">
-    
-    <div class="container">
-      <h1>Registro | user: 11111 | clave: 11111111</h1>
-      <hr>
-  
-      <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Enter Email" [(ngModel)]="username" name="username" required>
+<div class="body">
+  <form [formGroup]="formu" class="form">
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Nombre</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="nombre" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">dni 1</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="dni" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">clave 2</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="clave" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">fecha_ini</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="fecha_ini" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">fecha_fin</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="fecha_fin" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">tipo_contrato</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder=""  formControlName="tipo_contrato" aria-describedby="emailHelp">
+    </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">tipo_jornada</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="tipo_jornada" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">puesto</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="puesto" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">categoria</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder=""  formControlName="categoria" aria-describedby="emailHelp">
+    </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">grupo</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="grupo" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">canal</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="canal" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">empresa Ini</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="empresa" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">grupo_vacaciones Fin</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="grupo_vacaciones" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">salario</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="salario" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">complementos</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="complementos" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">observaciones Min</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="observaciones" aria-describedby="emailHelp">
+      </div>
+      <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    </form>    
+  </div>
 
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" [(ngModel)]="email" name="email" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" required>
-  
-      <label for="role"><b>Role</b></label>
-      <input type="password" placeholder="Repeat Password" [(ngModel)]="role" name="role" required>
-      
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
-      
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-  
+<!-- <form (ngSubmit)="onSubmit()" style="border:1px solid #ccc">
+    <div class="container">
+      <h1>ALTA DE EMPLEADOS</h1>
+      <label for="username"><b>Nombre</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.nombre" name="satan" required>
+      <label for="username"><b>DNI</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.dni" name="dni" required>
+      <label for="username"><b>Clave</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.clave" name="clave" required>
+      <label for="username"><b>Fecha Inicio</b></label>
+      <input type="date" placeholder="Enter Email" [(ngModel)]="registro.fecha_ini" name="fecha_ini" required><br>
+      <label for="username"><b>Fecha Fin</b></label>
+      <input type="date" placeholder="Enter Email" [(ngModel)]="registro.fecha_fin" name="fecha_fin" required><br>
+      <label for="username"><b>Tipo Contrato</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.tipo_contrato" name="tipo_contrato" required>
+      <label for="username"><b>Tipo Jornada</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.tipo_jornada" name="tipo_jornada" required>
+      <label for="username"><b>Puesto</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.puesto" name="puesto" required>
+      <label for="username"><b>Categoría</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.categoria" name="categoria" required>
+      <label for="username"><b>Grupo</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.grupo" name="grupo" required>
+      <label for="username"><b>Canal</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.canal" name="canal" required>
+      <label for="username"><b>Empresa</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.empresa" name="empresa" required>
+      <label for="username"><b>Grupo Vacaciones</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.grupo_vacaciones" name="grupo_vacaciones" required>
+      <label for="username"><b>Salario</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.salario" name="salario" required>
+      <label for="username"><b>Complementos</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.complementos" name="complementos" required>
+      <label for="username"><b>Observaciones</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="registro.observaciones" name="observaciones" required>
       <div class="clearfix">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="submit" class="signupbtn">ENVIAR</button>
       </div>
     </div>
   </form>
-  <div class="toLogin">  <button type="submit" (click)="login()" >LOGIN</button>  </div>
-  <div class="toLogin">  <button type="submit" (click)="vacaciones()" >VACACIONES</button>  </div>
+
+
+ -->

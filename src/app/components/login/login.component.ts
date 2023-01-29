@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   mensajeKawai: any;
   mensajeBaka: any;
   msgs2: Message[];
+  a: string = "a";
 
   bodyObject = {
     username: '',
@@ -81,8 +82,10 @@ export class LoginComponent implements OnInit {
       console.log(data);
       console.log("==================================================================>");
       this.data = data;
+      sessionStorage.setItem('token', JSON.stringify(this.data));
 
       if (this.data.username) {
+        sessionStorage.setItem('usuario', this.data.username); //METEMOS NOMBRE EN EL LOCALSTORAGE
         localStorage.setItem('usuario', this.data.username); //METEMOS NOMBRE EN EL LOCALSTORAGE
         localStorage.setItem('token_completo',JSON.stringify(this.data)); //METEMOS TOOOOODA LA INFO COMPLETA EN LOCALSTORAGE
         this.mensajeBaka = "";
@@ -95,9 +98,14 @@ export class LoginComponent implements OnInit {
         this.data.tokenType = this.data.tokenType;
         //localStorage.setItem("token", JSON.stringify(this.data.accessToken));
         //METEMOS SOLAMENTE EL TOKEN EN EL LOCALSTORAGE
+        this.data;
         localStorage.setItem("token", this.data.accessToken);
+
         //ENVIAMOS LOS DATOS A "admin" PERO EL CASO ES QUE APARECEN EN LA URL Y ESO NO PUEDE SER
-        this.router.navigate(['admin'], { queryParams: { toAdmin: JSON.stringify(this.data) } });
+        //this.router.navigate(['admin'], { queryParams: { toAdmin: JSON.stringify(this.data) } });
+        //this.router.navigate(['admin',{toAdmin: this.data}] );
+
+        this.router.navigate(['admin']);
       }
 
     }, (errorServicio) => {

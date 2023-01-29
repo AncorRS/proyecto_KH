@@ -1,15 +1,66 @@
 <app-menu></app-menu>
 
-<h1>Username: {{ bodyObject.username }}</h1>
-<h4>Token: {{ bodyObject.accessToken }}</h4>
-<h4>role1: {{ bodyObject.roles[0] }}</h4>
-<h4>role2: {{ bodyObject.roles[1] }}</h4>
-<h4>Email: {{ bodyObject.email }}</h4>
-<h4>TokenType: {{ bodyObject.tokenType }}</h4>
+<h1>{{ role_user }}</h1>
+<h3>{{ token1.username }}</h3>
+<h3>{{ token1.id }}</h3>
+<h3>{{ token1.accessToken }}</h3>
 
+<div class="my-2 text-left">
+    <button *ngIf="servicio.hasRole('ROLE_ADMIN')
+     && servicio.hasRoleAdmin()"
+      class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">Crear Empleado</button>
+  </div>
+  
+  <div class="parent">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">MI FICHA</h5>
+        <button class="btn btn-primary" (click)="toFichaEmpleado()">CONSULTAR FICHA</button>
+        <button class="btn btn-primary" (click)="toUpdateEmpleado()">MODIFICAR FICHA</button>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">MI PUESTO</h5>
+        <a href="#" class="btn btn-primary">MIS FUNCIONES</a>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">VACACIONES</h5>
+        <button class="btn btn-primary" (click)="toSolicitudVacaciones()">SOLICITUD DE VACACIONES</button>
+        <button class="btn btn-primary" (click)="toVacacionesEmpleado()">HISTORIAL DE VACACIONES</button>
+      </div>
+    </div>
+  
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">DOCUMENTOS</h5>
+        <a href="#" class="btn btn-primary">GENERALES</a>
+        <a href="#" class="btn btn-primary">NOMINAS</a>
+        <a href="#" class="btn btn-primary">DOCUMENTOS DE EMPRESA</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="parent" *ngIf="servicio.hasRole('ROLE_ADMIN') && servicio.hasRoleAdmin()">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">EMPLEADOS</h5>
+        <a href="#" class="btn btn-primary">LISTADO DE EMPLEADOS</a>
+        <a href="#" class="btn btn-primary">LISTADO DE ALTAS</a>
+        <a href="clientes/form" class="btn btn-primary">AÑADIR EMPLEADO</a>
+        <button class="btn btn-primary" (click)="toTodasSolicitudes()">SOLICITUD DE VACACIONES</button>
+      </div>
+    </div>
+  </div>
 
-<label for="">LISTA EMPLEADOS</label>
-<a [routerLink]="['/lista-empleados']">CLICK</a><br><br>
+ 
 
-<label for="">LISTA VACACIONES</label>
-<a [routerLink]="['/lista-vacaciones']">CLICK</a>

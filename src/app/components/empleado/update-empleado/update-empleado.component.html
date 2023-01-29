@@ -1,0 +1,140 @@
+<app-menu></app-menu>
+
+<div class="body">
+<form [formGroup]="formu" class="form">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.nombre_empleado }}" [(ngModel)]="datosEmpleado.nombre_empleado" formControlName="nombre_empleado" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Apellido 1</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.apellido1 }}" [(ngModel)]="datosEmpleado.apellido1" formControlName="apellido1" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Apellido 2</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.apellido2 }}" [(ngModel)]="datosEmpleado.apellido2" formControlName="apellido2" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Calle</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.calle }}" [(ngModel)]="datosEmpleado.calle" formControlName="calle" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Categoría</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.categoria }}" [(ngModel)]="datosEmpleado.categoria" formControlName="categoria" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Contacto</span>
+    <input type="email" class="form-control" id="exampleInputEmail1" 
+    placeholder="{{ datosEmpleado.contacto }}" [(ngModel)]="datosEmpleado.contacto" formControlName="contacto" aria-describedby="emailHelp">
+  </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">CP</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.cp }}" [(ngModel)]="datosEmpleado.cp" formControlName="cp" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Cuenta_C</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.cuenta_c }}" [(ngModel)]="datosEmpleado.cuenta_c" formControlName="cuenta_c" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">departamento</span>
+    <input type="text" class="form-control" id="exampleInputEmail1" 
+    placeholder="{{ datosEmpleado.departamento }}" [(ngModel)]="datosEmpleado.departamento" formControlName="departamento" aria-describedby="emailHelp">
+  </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">DNI</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.dni }}" [(ngModel)]="datosEmpleado.dni" formControlName="dni" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Email</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.email }}" [(ngModel)]="datosEmpleado.email" formControlName="email" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Fecha Ini</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.fecha_ini }}" [(ngModel)]="datosEmpleado.fecha_ini" formControlName="fecha_ini" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Fecha Fin</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.fecha_fin }}" [(ngModel)]="datosEmpleado.fecha_fin" formControlName="fecha_fin" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nacimiento</span>
+      <input type="email" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.fecha_nac }}" [(ngModel)]="datosEmpleado.fecha_nac" formControlName="fecha_nac" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Foto</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.foto }}" [(ngModel)]="datosEmpleado.foto" formControlName="foto" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Foto Min</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.foto_min }}" [(ngModel)]="datosEmpleado.foto_min" formControlName="foto_min" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Grupo Vac.</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.grupo_vacaciones }}" [(ngModel)]="datosEmpleado.grupo_vacaciones" formControlName="grupo_vacaciones" aria-describedby="emailHelp">
+    </div>
+<!--     <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Id.empl</span>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="id_empl" aria-describedby="emailHelp">
+    </div> -->
+    <!-- <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Id_K_Empleaod</span>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="id_key_empleado" aria-describedby="emailHelp">
+    </div> -->
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Letra</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.letra }}" [(ngModel)]="datosEmpleado.letra" formControlName="letra" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Numero</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.numero }}" [(ngModel)]="datosEmpleado.numero" formControlName="numero" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Parentesco</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.parentesco }}" [(ngModel)]="datosEmpleado.parentesco" formControlName="parentesco" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Piso</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.piso }}" [(ngModel)]="datosEmpleado.piso" formControlName="piso" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Puesto</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.puesto }}" [(ngModel)]="datosEmpleado.puesto" formControlName="puesto" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Seg.Soc.</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.seg_soc }}" [(ngModel)]="datosEmpleado.seg_soc" formControlName="seg_soc" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Telefono</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.telefono }}" [(ngModel)]="datosEmpleado.telefono" formControlName="telefono" aria-describedby="emailHelp">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Tfno Contacto</span>
+      <input type="text" class="form-control" id="exampleInputEmail1" 
+      placeholder="{{ datosEmpleado.telefono_contacto }}" [(ngModel)]="datosEmpleado.telefono_contacto" formControlName="telefono_contacto" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" (click)="actualiza()" class="btn btn-primary">Submit</button>
+  </form>    
+</div>

@@ -1,4 +1,74 @@
-<p>ficha-empleado works!</p>
+<app-menu></app-menu>
+<h1>FICHA EMPLEADO</h1>
 
-{{multiples}}
+
+<!-- <h3>{{ datosEmpleado.nombre_empleado }}</h3>
+<h3>{{ datosEmpleado.apellido1 }}</h3>
+<h3>{{ datosEmpleado.apellido2 }}</h3> -->
+<div class="container">
+  <div class="body">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre</span>
+        <input type="text" class="form-control" placeholder="{{ datosEmpleado.nombre_empleado }}" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Apellidos</span>
+        <input type="text" aria-label="First name" class="form-control" placeholder="{{ datosEmpleado.apellido1 }}">
+        <input type="text" aria-label="Last name" class="form-control" placeholder="{{ datosEmpleado.apellido2 }}">
+      </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Dni</span>
+        <input type="text" class="form-control" placeholder="{{ datosEmpleado.dni }}" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Teléfono</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Teléfono</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nacimiento</span>
+        <input type="text" class="form-control" placeholder="{{ datosEmpleado.fecha_nac }}" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+    </div>
+    
+    <div class="mb-3">
+        <label for="basic-url" class="form-label">Your vanity URL</label>
+        <div class="input-group">
+        <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <div class="form-text">Example help text goes outside the input group.</div>
+    </div>
+    
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+    </div>
+    
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+    </div>
+    
+    <div class="input-group">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+  </div>  
+</div>  
+<div>
+    <button (click)="toUpdateEmpleado()"> Button Label</button>
+</div>
+
+
+<!-- {{multiples}} -->
 <!-- {{empleado}} -->

@@ -25,6 +25,11 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
 import { ListaVacacionesComponent } from './components/lista-vacaciones/lista-vacaciones.component';
+import { IndexComponent } from './components/index/index.component';
+import { UpdateEmpleadoComponent } from './components/empleado/update-empleado/update-empleado.component';
+import { VacacionesEmpleadoComponent } from './components/empleado/vacaciones-empleado/vacaciones-empleado.component';
+import { SolicitudVacacionesComponent } from './components/empleado/solicitud-vacaciones/solicitud-vacaciones.component';
+import { ListadoSolicitudesComponent } from './components/admin/listado-solicitudes/listado-solicitudes.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { ListaVacacionesComponent } from './components/lista-vacaciones/lista-va
     MenuComponent,
     ModalLoginComponent,
     ModalRegistroComponent,
-    ListaVacacionesComponent
+    ListaVacacionesComponent,
+    IndexComponent,
+    UpdateEmpleadoComponent,
+    VacacionesEmpleadoComponent,
+    SolicitudVacacionesComponent,
+    ListadoSolicitudesComponent
   ],
   imports: [
     BrowserModule,
