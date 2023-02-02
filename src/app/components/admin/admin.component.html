@@ -1,66 +1,55 @@
 <app-menu></app-menu>
 
-<h1>{{ role_user }}</h1>
+<!-- <h1>{{ role_user }}</h1>
 <h3>{{ token1.username }}</h3>
 <h3>{{ token1.id }}</h3>
-<h3>{{ token1.accessToken }}</h3>
+<h3>{{ token1.accessToken }}</h3> -->
 
+<!-- ZONA EXCLUSIVA DE JEFES Y ADMINISTRADORES -->
 <div class="my-2 text-left">
-    <button *ngIf="servicio.hasRole('ROLE_ADMIN')
-     && servicio.hasRoleAdmin()"
-      class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">Crear Empleado</button>
-  </div>
-  
-  <div class="parent">
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">MI FICHA</h5>
-        <button class="btn btn-primary" (click)="toFichaEmpleado()">CONSULTAR FICHA</button>
-        <button class="btn btn-primary" (click)="toUpdateEmpleado()">MODIFICAR FICHA</button>
+    <div class="parent" *ngIf="servicio.hasRole('ROLE_ADMIN') && servicio.hasRoleAdmin()">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">GESTION EMPLEADOS</h5>
+          <button class="btn btn-primary" (click)="toTodasSolicitudes()">SOLICITUDES DE VACACIONES</button>
+          <button class="btn btn-primary" (click)="toListadoAltas()">LISTADO DE ALTAS</button>
+          <button class="btn btn-primary" (click)="toAddEmpleado()">AÑADIR EMPLEADO</button>
+        </div>
       </div>
     </div>
-  
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">MI PUESTO</h5>
-        <a href="#" class="btn btn-primary">MIS FUNCIONES</a>
-      </div>
-    </div>
-  
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">VACACIONES</h5>
-        <button class="btn btn-primary" (click)="toSolicitudVacaciones()">SOLICITUD DE VACACIONES</button>
-        <button class="btn btn-primary" (click)="toVacacionesEmpleado()">HISTORIAL DE VACACIONES</button>
-      </div>
-    </div>
-  
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">DOCUMENTOS</h5>
-        <a href="#" class="btn btn-primary">GENERALES</a>
-        <a href="#" class="btn btn-primary">NOMINAS</a>
-        <a href="#" class="btn btn-primary">DOCUMENTOS DE EMPRESA</a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="parent" *ngIf="servicio.hasRole('ROLE_ADMIN') && servicio.hasRoleAdmin()">
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">EMPLEADOS</h5>
-        <a href="#" class="btn btn-primary">LISTADO DE EMPLEADOS</a>
-        <a href="#" class="btn btn-primary">LISTADO DE ALTAS</a>
-        <a href="clientes/form" class="btn btn-primary">AÑADIR EMPLEADO</a>
-        <button class="btn btn-primary" (click)="toTodasSolicitudes()">SOLICITUD DE VACACIONES</button>
-      </div>
+</div>
+
+<!-- ZONA COMUN PARA TODES -->
+<div class="parent">
+  <div class="card child" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">MI FICHA</h5>
+      <button class="btn btn-primary" (click)="toFichaEmpleado()">CONSULTAR FICHA</button><br>
+      <button class="btn btn-primary" (click)="toUpdateEmpleado()">MODIFICAR FICHA</button>
     </div>
   </div>
 
- 
+  <div class="card child" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">MI PUESTO</h5>
+      <button class="btn btn-primary" (click)="toMisFunciones()">MIS FUNCIONES</button>
+    </div>
+  </div>
 
+  <div class="card child" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">VACACIONES</h5>
+      <button class="btn btn-primary" (click)="toSolicitudVacaciones()">SOLICITUD DE VACACIONES</button><br>
+      <button class="btn btn-primary" (click)="toVacacionesEmpleado()">HISTORIAL DE VACACIONES</button>
+    </div>
+  </div>
+
+  <div class="card child" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">DOCUMENTOS</h5>
+      <button class="btn btn-primary" (click)="toGenerales()">GENERALES</button><br>
+      <button class="btn btn-primary" (click)="toNominas()">NOMINAS</button><br>
+      <button class="btn btn-primary" (click)="toDocumentosEmpresa()">DOCUMENTOS DE EMPRESA</button>
+    </div>
+  </div>
+</div>

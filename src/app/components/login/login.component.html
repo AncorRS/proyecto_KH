@@ -1,9 +1,5 @@
 <app-menu></app-menu>
 
-<!-- <div class="titulo">
-  <h2>Login Form: user: 11111 | clave: 11111111</h2>
-</div>   -->
-
 <div class="titulo">
   <h2>Login Form: ADMIN: FEFI | clave: 78478778</h2>
 </div>
@@ -11,32 +7,38 @@
   <h2>Login Form: EMPLEADO: YANIRA | clave: 78489359</h2>
 </div>
 
-<div class="errores">
-  <!-- <h2>{{ mensajeKawai }}</h2>
-  <h2>{{ mensajeBaka }}</h2> -->
-  <p-messages class="mensages_error_primeNg" [(value)]="msgs2" [enableService]="false"></p-messages>
-</div>
-
-<form (ngSubmit)="login()">
+<!-- <form [formGroup]="formu" (ngSubmit)="login()"> -->
+<form [formGroup]="formu">
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" [(ngModel)]="username" name="uname" required>
+    <input class="error" type="text" placeholder="Usuario" formControlName="username" name="uname" required>
+    <div class="usernameError" 
+    *ngIf="usernameError.invalid && formSubmited">* El campo no puede estar vacío</div>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="psw" required>
+    <input type="password" placeholder="Contraseña" formControlName="password" name="psw" required>
+    <div class="passwordError" 
+    *ngIf="passwordError.invalid && formSubmited">* El campo no puede estar vacío</div>
 
-    <button *ngIf="a == 'a'"  type="submit">Login</button>
-    <label>
+    <button *ngIf="a == 'a'" (click)="onSubmit()" type="submit">Login</button>
+   <!--  <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    </label> -->
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
+ <!--  <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
+  </div> -->
 </form>
+
+<div class="errores">
+  <p-messages class="mensages_error_primeNg" [(value)]="msgs2" [enableService]="false"></p-messages>
+</div>
+<div class="errores">
+  <p-messages class="mensages_error_primeNg_1300" [(value)]="msgs2" [enableService]="false"></p-messages>
+</div>
 
 <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -63,26 +65,3 @@
 </div>
 
 <!-- <button (click)="openDialog1()">MAT BUTTON</button> -->
-
-<!-- BOTON MOSTRAR MENSAJES DE ERROR DE PRIMENG -->
-<!-- <button (click)="addMessages()">MENSAJES PRIMENG</button> -->
-
-<!-- MENSAJES DE ERROR DE PRIMENG -->
-<!-- <p-messages [(value)]="msgs2" [enableService]="false"></p-messages> -->
-
-<!-- BOTONES DE PRIMENG -->
-<!-- <h5>Dynamic</h5>
-<button type="button" pButton pRipple (click)="addMessages()" label="Show" class="p-mr-2"></button>
-<button type="button" pButton pRipple icon="pi pi-times" label="Clear" class="p-button-secondary"></button> -->
-
-<!-- BOTONES DE PRIMENG -->
-<!-- <h5>Message Service</h5>
-<button type="button" pButton (click)="showViaService()" label="Via Service"></button>
-<p-messages></p-messages> -->
-
-<!-- <h5>Inline Message</h5>
-<p>p-message component is used to display inline messages mostly within forms.</p>
-<p-message severity="info" text="Message Content" styleClass="p-mr-2"></p-message>
-<p-message severity="success" text="Message Content" styleClass="p-mr-2"></p-message>  
-<p-message severity="warn" text="Message Content" styleClass="p-mr-2"></p-message>  
-<p-message severity="error" text="Message Content"></p-message> -->

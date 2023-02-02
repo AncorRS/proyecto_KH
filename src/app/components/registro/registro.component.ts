@@ -20,22 +20,30 @@ export class RegistroComponent implements OnInit {
   mensajeBaka: any;
   data: any;
   registro = {
-    nombre: "www11",
-    dni: "www11",
-    clave: "www11",
-    fecha_ini: "1999-09-09",
-    fecha_fin: "1999-09-09",
-    tipo_contrato: "aa",
-    tipo_jornada: "bb",
+    //idempleado: null,
+    nombre: "www33",
+    dni: "www33",
+    clave: "www33",
+    fechaini: "1999-09-09",
+    fechafin: "1999-09-08",
+    tipocontrato: "a",
+    tipojornada: "b",
     puesto: "d",
     categoria: "e",
     grupo: 0,
     canal: "f",
     empresa: "g",
-    grupo_vacaciones: 0,
+    grupovacaciones: 0,
     salario: 15000,
     complementos: "h",
-    observaciones: "i"
+    observaciones: "i",
+    //role: ['user','admin']
+    role: ['user','admin']
+  };
+
+  registroClasePrueba = {
+    nombre_elemento: "www21",
+    id: null
   };
   formu: FormGroup;
 
@@ -58,25 +66,30 @@ export class RegistroComponent implements OnInit {
 
   constructor(
     private servicio: ServiceService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
     ) { 
-      this.formu = new FormGroup({
-        nombre: new FormControl(),
-        dni: new FormControl(),
-        clave: new FormControl(),
-        fecha_ini: new FormControl(),
-        fecha_fin: new FormControl(),
-        tipo_contrato: new FormControl(),
-        tipo_jornada: new FormControl(),
-        puesto: new FormControl(),
-        categoria: new FormControl(),
-        grupo: new FormControl(),
-        canal: new FormControl(),
-        empresa: new FormControl(),
-        grupo_vacaciones: new FormControl(),
-        salario: new FormControl(),
-        complementos: new FormControl(),
-        observaciones: new FormControl()
+      /* this.form = this.fb.group({
+        FirstName: ['', Validators.required],
+      }); */
+
+      this.formu = this.formBuilder.group({
+        nombre: ['', Validators.required],
+        dni: ['', Validators.required],
+        clave: ['', Validators.required],
+        fechaini: ['2000-01-01', Validators.required],
+        fechafin: ['', Validators.required],
+        tipocontrato: ['', Validators.required],
+        tipojornada: ['', Validators.required],
+        puesto: ['', Validators.required],
+        categoria: ['', Validators.required],
+        grupo: ['', Validators.required],
+        canal: ['', Validators.required],
+        empresa: ['', Validators.required],
+        grupovacaciones: ['', Validators.required],
+        salario: ['', Validators.required],
+        complementos: ['', Validators.required],
+        observaciones: ['', Validators.required]
     });
     }
 
@@ -137,10 +150,18 @@ export class RegistroComponent implements OnInit {
 
   registroFake(){
     console.log("registroFake");
-    this.servicio.registroFake(this.registro).subscribe(data =>{})
+    this.servicio.registroFake(this.formu.value).subscribe(data =>{
+      console.log(data);
+    })
+  }
+
+  onSubmitClasePrueba(){
+    console.log("onSubmitClasePrueba");
+    this.servicio.clasePrueba(this.registroClasePrueba).subscribe(data =>{
+      console.log(data);
+    })
   }
 }
-
 
 interface Cliente {
   message: String;

@@ -24,23 +24,23 @@
       </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">fecha_ini</span>
-        <input type="text" class="form-control" id="exampleInputEmail1" 
-        placeholder=""  formControlName="fecha_ini" aria-describedby="emailHelp">
+        <input type="date" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="fechaini" aria-describedby="emailHelp">
       </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">fecha_fin</span>
-        <input type="text" class="form-control" id="exampleInputEmail1" 
-        placeholder=""  formControlName="fecha_fin" aria-describedby="emailHelp">
+        <input type="date" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="fechafin" aria-describedby="emailHelp">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">tipo_contrato</span>
       <input type="text" class="form-control" id="exampleInputEmail1" 
-      placeholder=""  formControlName="tipo_contrato" aria-describedby="emailHelp">
+      placeholder=""  formControlName="tipocontrato" aria-describedby="emailHelp">
     </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">tipo_jornada</span>
         <input type="text" class="form-control" id="exampleInputEmail1" 
-        placeholder=""  formControlName="tipo_jornada" aria-describedby="emailHelp">
+        placeholder=""  formControlName="tipojornada" aria-describedby="emailHelp">
       </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">puesto</span>
@@ -70,7 +70,7 @@
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">grupo_vacaciones Fin</span>
         <input type="text" class="form-control" id="exampleInputEmail1" 
-        placeholder=""  formControlName="grupo_vacaciones" aria-describedby="emailHelp">
+        placeholder=""  formControlName="grupovacaciones" aria-describedby="emailHelp">
       </div>
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">salario</span>
@@ -90,6 +90,22 @@
       <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
     </form>    
   </div>
+
+<!-- <div class="body">
+  <form [formGroup]="formu" class="form">
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Nombre</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="nombre" aria-describedby="emailHelp">
+      </div>
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">dni 1</span>
+        <input type="text" class="form-control" id="exampleInputEmail1" 
+        placeholder=""  formControlName="dni" aria-describedby="emailHelp">
+      </div>
+      <button type="submit" (click)="onSubmitClasePrueba()" class="btn btn-primary">Submit</button>
+    </form>    
+  </div> -->
 
 <!-- <form (ngSubmit)="onSubmit()" style="border:1px solid #ccc">
     <div class="container">

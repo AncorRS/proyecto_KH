@@ -77,4 +77,30 @@ export class AdminComponent implements OnInit {
     console.log("toTodasSolicitudes");
     this.router.navigate(['/admin/listado-solicitudes']);
   }
+
+  toMisFunciones(){
+    console.log("toMisFunciones");
+    //this.router.navigate(['/admin/listado-solicitudes']);
+  }
+  toGenerales(){
+    console.log("toGenerales");
+    //this.router.navigate(['/admin/listado-solicitudes']);
+  }
+  toNominas(){
+    console.log("toNominas");
+    //this.router.navigate(['/admin/listado-solicitudes']);
+  }
+  toDocumentosEmpresa(){
+    console.log("toDocumentosEmpresa");
+    //this.router.navigate(['/admin/listado-solicitudes']);
+  }
+  toAddEmpleado(){
+    console.log("toAddEmpleado");
+    this.router.navigate(['/clientes/form']);
+  }
+  toListadoAltas(){
+    console.log("toListadoAltas");
+    //this.router.navigate(['/admin/listado-solicitudes']);
+  }
+
 }

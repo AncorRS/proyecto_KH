@@ -29,6 +29,7 @@ export class ServiceService {
   url5= `http://localhost:8080/admin/empleado`;
   url6= `http://localhost:8080/admin/actualizaEmpleado`;
   url7= `http://localhost:8080/admin/todas-las-vacaciones`;
+  url8= `http://localhost:8080/admin/claseprueba`;
   //url7= `http://localhost:8080/admin/saveVacaciones`;
   //url3= `http://localhost:8080/api/auth/buscador?t=${this.termino}`;
 
@@ -100,6 +101,9 @@ export class ServiceService {
 
       // 1,  'MARIA DE LA LUZ', '42869959Y', '67', '2007-01-03', NULL, 'indefinido', 'completa', 'Cajero/a', 'Cajero/a', '5', 'T01', 'ANIDIA', 8, 15000, '', 'Teleoperadora'   
     return this.http.post(this.url, data);
+  }
+  clasePrueba(data: any){  
+    return this.http.post(this.url8, data);
   }
 
   empleado(termino: string){

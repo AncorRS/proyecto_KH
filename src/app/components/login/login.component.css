@@ -22,6 +22,10 @@ input[type=password] {
     box-sizing: border-box;
 }
 
+input.ng-touched.ng-invalid {
+    border-color:red;
+}
+
 button {
     background-color: #04AA6D;
     color: white;
@@ -63,7 +67,7 @@ span.psw {
 }
 
 .mensages_error_primeNg{
-    width: 50%;
+    width: 20%;
     color: black;
 }
 
@@ -76,7 +80,40 @@ span.psw {
     margin: auto;
 }
 
+.usernameError, .passwordError{
+    color:red;
+}
+
+.messageStyle{
+    border-style: solid;
+    border-width: 2px;
+    border: #04AA6D;
+}
+
+.mensages_error_primeNg_1300{
+    display:none;
+}
+
 /* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 1300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+
+    .mensages_error_primeNg_1300{
+        display:block
+    }
+
+    .mensages_error_primeNg{
+        display: none;
+    }
+}
+
 @media screen and (max-width: 300px) {
     span.psw {
         display: block;
@@ -85,5 +122,9 @@ span.psw {
 
     .cancelbtn {
         width: 100%;
+    }
+
+    .mensages_error_primeNg{
+        display: none;
     }
 }
