@@ -96,7 +96,7 @@ export class AdminComponent implements OnInit {
   }
   toAddEmpleado(){
     console.log("toAddEmpleado");
-    this.router.navigate(['/clientes/form']);
+    this.router.navigate(['/registro']);
   }
   toListadoAltas(){
     console.log("toListadoAltas");

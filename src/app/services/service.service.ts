@@ -12,12 +12,17 @@ export class ServiceService {
 
   //termino: any ="";
 
-  //EL BACKEND SE LLAMA: spring-boot-login-example-master
+  //EL BACKEND SE LLAMA: spring-boot-login-example-master DENTRO DEL WORKSPACE "Usuario/Desktop/PROYECTO TOTAL"
+  //RESULTA QUE EN RELAIDAD ESTA EN C:\Users\Usuario\Desktop\PROYECTOS_SPRINGBOOT\KH_SPRINGBOOT
+  //ESTE ULTIMO POR LO VISTO LO COPIE A UN WORKSPACE A PARTE PARA TRABAJAR CON EL
+
   //LOGIN: mamacita / mamacita / el correo es el mamacita@hotmail.com
   //CUANDRO CREAS UN USUARIO TIENE QUE TENER UN MINIMO DE LETRAS DE 8 O ASI
   //arrancarlo desde ------> http://localhost:4200/registro
 
-  //ESTE ES EL PROYECTO COPIADO QUE ESTOY USANDO A 2023
+  //ESTE ES EL PROYECTO COPIADO QUE ESTOY USANDO A 2023 <----------IMPORTANTE !!!!!!!!!!
+  //Y EL QUE SIGO UTILIZANDO A 2024 !!!!!!!!!!!!!!
+  //prueba github
 
   headers: HttpHeaders;
   token: any;

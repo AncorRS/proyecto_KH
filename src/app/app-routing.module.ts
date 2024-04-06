@@ -26,8 +26,8 @@ const routes: Routes = [
   {path:'lista-empleados', component: ListaEmpleadosComponent},
   {path:'lista-vacaciones', component: ListaVacacionesComponent},
   {path:'index', component: IndexComponent},
-  {path:'', pathMatch:'full', redirectTo:'registro'},
-  {path:'**', pathMatch:'full', redirectTo:'registro'}
+  {path:'', pathMatch:'full', redirectTo:'login'},
+  {path:'**', pathMatch:'full', redirectTo:'login'}
 ];
 
 @NgModule({

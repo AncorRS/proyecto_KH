@@ -11,12 +11,12 @@
 <form [formGroup]="formu">
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
+    <!-- <label for="uname"><b>Username</b></label> -->
     <input class="error" type="text" placeholder="Usuario" formControlName="username" name="uname" required>
     <div class="usernameError" 
     *ngIf="usernameError.invalid && formSubmited">* El campo no puede estar vacío</div>
 
-    <label for="psw"><b>Password</b></label>
+    <!-- <label for="psw"><b>Password</b></label> -->
     <input type="password" placeholder="Contraseña" formControlName="password" name="psw" required>
     <div class="passwordError" 
     *ngIf="passwordError.invalid && formSubmited">* El campo no puede estar vacío</div>
